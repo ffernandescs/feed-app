@@ -9,13 +9,16 @@ export const Comentarios = () => {
             <Flex>
                 <Grid 
                     w='100%'    
-                    templateColumns='5rem 1fr' 
-                    gap={5}
+                    templateColumns={['4rem 1fr','4rem 1fr', '4rem 1fr', '5rem 1fr']}
+                    gap={2}
                     >
                     <GridItem  >
-                        <Avatar 
-                        border='3px solid #2F855A'
-                    />  
+                        <Avatar
+                            boxSize={['55px','55px','55px','70px']}
+                            border='3px solid #2F855A'
+                            ml={0}
+                            p={[0, 0, 0, 1, 1]}
+                        />  
                     </GridItem>
                     <GridItem>
                         <Box 
@@ -28,8 +31,8 @@ export const Comentarios = () => {
                                 title="Felipe Fernandes"
                                 subtitle="Desenvolvedor Front-End"
                                 color="white"
-                                alignItems='flex-start'
-                            />
+                                alignItems={['flex-start']}
+                                />
                             <Text
                                 mt={5}
                             >Adorei seu novo portifolio Felipe!</Text>

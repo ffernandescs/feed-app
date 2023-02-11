@@ -4,12 +4,13 @@ interface Props {
     title: string;
     subtitle: string;
     color?: string;
-    pl?: string;
-    alignItems?: string
+    pl?: string[];
+    pt?: string[];
+    alignItems?: string[]
 
   }
 
-export const Name: React.FC<Props> = ({ title, subtitle, color, pl, alignItems }) => {
+export const Name: React.FC<Props> = ({ title, subtitle, color, pl, pt, alignItems }) => {
     return (
         <Center
         flexDirection='column'
@@ -22,6 +23,7 @@ export const Name: React.FC<Props> = ({ title, subtitle, color, pl, alignItems }
                 fontSize={20} fontWeight='bold'
                 color={color}
                 pl={pl}
+                pt={pt}
                 as='h1'
             >{title}
             </Text>

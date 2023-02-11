@@ -13,7 +13,7 @@ export const Avatar = (props:any) => {
         >
             <Image
                 borderRadius='2px'
-                boxSize='4rem'
+                boxSize='70px'
                 objectFit='cover'
                 src="https://images.unsplash.com/photo-1509967419530-da38b4704bc6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=200&q=40" 
                 

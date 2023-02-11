@@ -1,5 +1,5 @@
 import { useState } from "react"
-import { Box, Button, Center, Flex, Text, Textarea } from "@chakra-ui/react"
+import { Box, Button, Flex, Text, Textarea } from "@chakra-ui/react"
 import { Avatar } from "../Sidebar/Avatar/Index"
 import { Name } from "../Sidebar/Name/Name"
 import { Comentarios } from "./Comentarios/Index"
@@ -23,24 +23,37 @@ export const Post = () => {
         <Flex
             justifyContent='space-between'
             direction='column'
-            p={10}
-            mb={10}
+            p={[5, 5, 5, 10]}
+            mb={[5, 5, 5, 10]}
             borderRadius={15}
             overflow='hidden'
             bg='blackAlpha.700'
         >
-            <Flex mb={7} align='center' justifyContent='space-between'>
-                <Center>
+            <Flex
+                direction={['column', 'column', 'column', 'row']}
+                align='center' 
+                justifyContent='space-between'
+                mb={7}
+            >
+                <Flex
+                    w={['100%', '100%', '100', 'inherit']}
+                    direction={['column', 'column', 'column', 'row']}
+                    align='center'    
+                >
                     <Avatar />
                     <Name
                         title="Felipe Fernandes"
                         subtitle="Desenvolvedor Front-End"
                         color="white"
-                        pl="7"
-                        alignItems='flex-start'
+                        pl={['0', '0', '0', '7']}
+                        pt={['5', '5', '0', '0']}
+                        alignItems={['center', 'center', 'center', 'flex-start']}
                     />
-                </Center>
-                <Text color='whiteAlpha.600'>Publicado há 1h</Text>
+                </Flex>
+                <Text 
+                    w={['100%', '100%', '100', 'inherit']}
+                    mt={[4, 4, 4, 0]}
+                    color='whiteAlpha.600'>Publicado há 1h</Text>
             </Flex>
             <Flex>
                 <Text color='whiteAlpha.900'>

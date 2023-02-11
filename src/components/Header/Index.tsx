@@ -29,7 +29,7 @@ export const Header = () => {
                 </Link>
                 <Box 
                     pos='absolute'
-                    right='10'
+                    right={[0, 0, 5, 5]}
                     onClick={toggleColorMode} 
                     cursor='pointer'
                 >
