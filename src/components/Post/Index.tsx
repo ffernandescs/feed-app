@@ -26,18 +26,14 @@ interface Comments {
     publishedAt: Date;
   }
 
-const comments: Comments[] = [
-    {
-        id: 1,
-        avatarUrl: 'https://avatars.githubusercontent.com/u/83374517?v=4',
-        name: 'Thaynna Caroline',
-        comment: 'Acabei de subir mais um projeto no meu portifa. É um projeto que fiz no NLW Return, evento da Rocketseat.',
-        publishedAt: new Date('2023-02-11 20:47:00'),
-    },
-];
-   
-
 export const Post: React.FC<Props> = ({ post }) => {
+
+    const [comments, setComments] = useState([
+        1,
+        2
+    ])
+
+
     
     const publishedDateRealativeToNow = formatDistanceToNow(post.publishedAt, {
         locale: ptBr,
@@ -55,6 +51,12 @@ export const Post: React.FC<Props> = ({ post }) => {
         console.log('Fora')
 
         setShowButton(false)
+    }
+
+    function handleCreateNewComment(newComment: number) {
+        setComments(comments.concat(newComment))
+        
+        
     }
 
     return (
@@ -120,7 +122,8 @@ export const Post: React.FC<Props> = ({ post }) => {
                     mb={7}>Deixe seu feedback</Text>
                 
             </Box>
-            <Textarea
+            <form>
+                <Textarea
                     h='120px'
                     border='3px solid #2F855A' 
                     borderRadius='10px'
@@ -130,20 +133,24 @@ export const Post: React.FC<Props> = ({ post }) => {
                     placeholder="Nossa, adorei amigo! parabens!"
                     onClick={handleTextareaClick}
                 />
-            {showButton && (
+                {showButton && (
                     <Button 
+                        type="button"
                         p={7} 
                         w='8.5rem' 
                         bg='green.600'
                         _hover={{bg: 'green.500'}}
                         mb={10}
+                        onClick={() => handleCreateNewComment(3)}
                     >Publicar
                     </Button>
-                )}
-                {comments.map(coment => {
-                    return <Comentarios comment={coment}/>
+                    )}
+                    {comments.map(coment => {
+                        return <Comentarios/>
 
-                })}
+                    })}
+            </form>
+            
         </Flex>
     )
 }

@@ -1,28 +1,10 @@
-import { formatDistanceToNow } from 'date-fns'
-import ptBr from 'date-fns/locale/pt-BR'
 import { Box, Flex, Text, Icon, Grid, GridItem } from "@chakra-ui/react"
 import { AiTwotoneLike } from "react-icons/ai";
 import { Avatar } from "../../Sidebar/Avatar/Index"
 import { Name } from "../../Sidebar/Name/Name"
 
-interface Comments {
-    comment: {
-        id: Number;
-        avatarUrl: string;
-        name: string;
-        comment: string;
-        publishedAt: Date;
-    };
-}
 
-export const Comentarios: React.FC<Comments> = ( {comment} ) => {
-
-    const publishedDateRealativeToNow = formatDistanceToNow(comment.publishedAt, {
-        locale: ptBr,
-        addSuffix: true
-    })
-
-
+export const Comentarios = () => {
     return (
         <Box>
             <Flex>
@@ -34,9 +16,9 @@ export const Comentarios: React.FC<Comments> = ( {comment} ) => {
                     <GridItem  >
                         <Avatar
                             boxSize={['55px','55px','55px','70px']}
+                            border='3px solid #2F855A'
                             ml={0}
                             p={[0, 0, 0, 1, 1]}
-                            src={comment.avatarUrl}
                         />  
                     </GridItem>
                     <GridItem>
@@ -47,15 +29,14 @@ export const Comentarios: React.FC<Comments> = ( {comment} ) => {
                             mb={5}
                         >
                             <Name
-                                title={comment.name}
-                                subtitle={publishedDateRealativeToNow}
+                                title="Felipe Fernandes"
+                                subtitle="Desenvolvedor Front-End"
                                 color="white"
                                 alignItems={['flex-start']}
-                                mb={['2']}
                                 />
                             <Text
                                 mt={5}
-                            >{comment.comment}</Text>
+                            >Adorei seu novo portifolio Felipe!</Text>
                         </Box>
                         <Flex align='center' cursor='pointer' _hover={{color: 'gray.300'}}> 
                             <Icon 
